@@ -4,6 +4,8 @@ Vagrant.configure('2') do |config|
     node.vm.box_url = 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box'
     node.vm.network :forwarded_port, guest: 22, host: 2001, id: 'ssh'
     node.vm.network :private_network, ip: '192.168.33.11'
+    node.vm.provision 'shell', privileged: false, inline: 'sudo yum install -y epel-release'
+    node.vm.provision 'shell', privileged: false, inline: 'sudo yum install -y ansible'
   end
 
   config.vm.define :node2 do |node|
