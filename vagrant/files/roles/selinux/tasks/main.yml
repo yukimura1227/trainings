@@ -1,0 +1,6 @@
+  - name: Install libselinux-python
+    yum: name=libselinux-python state=present
+    become: yes
+  - name: set SELinux state
+    selinux: state={{ selinux_state }}
+    become: yes

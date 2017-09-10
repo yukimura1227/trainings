@@ -1,0 +1,6 @@
+---
+- hosts: test-servers
+  roles:
+    - selinux
+  vars:
+    selinux_state: disabled
