@@ -2,5 +2,6 @@
 - hosts: test-servers
   roles:
     - selinux
+    - git
   vars:
     selinux_state: disabled
