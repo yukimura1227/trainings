@@ -11,7 +11,7 @@ Vagrant.configure('2') do |config|
     node.vm.provision 'shell', inline: "echo '[all:vars]' >>  /etc/ansible/hosts"
     node.vm.provision 'shell', inline: "echo 'ansible_ssh_user=vagrant' >>  /etc/ansible/hosts"
     node.vm.provision 'shell', inline: "echo 'ansible_ssh_pass=vagrant' >>  /etc/ansible/hosts"
-    node.vm.provision 'shell', inline: 'cp -p /vagrant/files/sample-playbook.yml /home/vagrant'
+    node.vm.provision 'shell', inline: 'cp -Rp /vagrant/ansible_files/ /home/vagrant'
   end
 
   config.vm.define :node2 do |node|
