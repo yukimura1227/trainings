@@ -22,3 +22,6 @@ install.packages('GGally')
 
 # 相関行列の表示用
 install.packages('corrplot')
+
+# ロジスティック回帰sample用のデータセット
+install.packages('kernlab')
