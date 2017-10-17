@@ -16,3 +16,5 @@ coefplot(lm.Boston)
 # 重回帰分析の説明変数を「変数選択」処理で減らしてみる。
 lm.Boston.step <- step(lm.Boston)
 summary(lm.Boston.step)
+
+pairs(Boston)
