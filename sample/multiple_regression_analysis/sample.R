@@ -6,3 +6,6 @@ data(Boston)
 lm.Boston <- lm(medv ~ . , data = Boston)
 
 summary(lm.Boston)
+
+# 結果のプロット
+coef(summary(lm.Boston))
