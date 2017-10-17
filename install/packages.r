@@ -7,3 +7,5 @@ installed.packages('RMySQL')
 # long format <-> wide format
 install.packages('dplyr')
 install.packages('tidyr')
+
+install.packages('ggplot2')
