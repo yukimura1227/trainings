@@ -11,3 +11,7 @@ qplot(
   xlab='カラット',
   ylab='価格[$]'
 )
+
+g <- ggplot(diamonds, aes(cut))
+g_bar <- g + geom_bar(aes(fill = clarity))
+print(g_bar)
