@@ -1,6 +1,7 @@
 library(MASS)
 library(coefplot)
 library(GGally)
+library(corrplot)
 
 data(Boston)
 
@@ -21,3 +22,5 @@ summary(lm.Boston.step)
 pairs(Boston)
 
 print(ggpairs(Boston), left=0.45, bottom=0.3)
+
+corrplot(Boston %>% cor, addCoef.col = TRUE)

@@ -19,3 +19,6 @@ install.packages('coefplot')
 
 # 多変量連関図を描画する用
 install.packages('GGally')
+
+# 相関行列の表示用
+install.packages('corrplot')
