@@ -1,6 +1,10 @@
 library(dplyr)
 library(ggplot2)
 
+data(cars)
+dist.cars <- dist(cars, method="manhattan")
+hc.cars <- hclust(dist.cars)
+
 # クラスタへの分割(クラスタ数=3)
 ct.cars <- cutree(hc.cars, k = 3)
 # クラスタ番号の結合
