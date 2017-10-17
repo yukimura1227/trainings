@@ -13,3 +13,6 @@ install.packages('ggplot2')
 
 # clustering
 install.packages('cluster')
+
+# 重回帰分析した結果の回帰係数のplot
+install.packages('coefplot')

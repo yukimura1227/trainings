@@ -1,4 +1,5 @@
 library(MASS)
+library(coefplot)
 
 data(Boston)
 
@@ -9,3 +10,5 @@ summary(lm.Boston)
 
 # 結果のプロット
 coef(summary(lm.Boston))
+
+coefplot(lm.Boston)
