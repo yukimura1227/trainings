@@ -8,4 +8,8 @@ installed.packages('RMySQL')
 install.packages('dplyr')
 install.packages('tidyr')
 
+# draw graph
 install.packages('ggplot2')
+
+# clustering
+install.packages('cluster')
