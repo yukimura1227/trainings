@@ -25,3 +25,9 @@ install.packages('corrplot')
 
 # ロジスティック回帰sample用のデータセット
 install.packages('kernlab')
+
+# C5.0アルゴリズム用のパッケージ
+install.packages('C50')
+
+# ROC曲線描画用
+install.packages('pROC')
