@@ -16,3 +16,6 @@ install.packages('cluster')
 
 # 重回帰分析した結果の回帰係数のplot
 install.packages('coefplot')
+
+# 多変量連関図を描画する用
+install.packages('GGally')

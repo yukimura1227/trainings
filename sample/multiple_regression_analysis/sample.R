@@ -1,5 +1,6 @@
 library(MASS)
 library(coefplot)
+library(GGally)
 
 data(Boston)
 
@@ -18,3 +19,5 @@ lm.Boston.step <- step(lm.Boston)
 summary(lm.Boston.step)
 
 pairs(Boston)
+
+print(ggpairs(Boston), left=0.45, bottom=0.3)
