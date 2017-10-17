@@ -13,9 +13,9 @@ qplot(
 )
 
 g <- ggplot(diamonds, aes(cut))
-
 g_bar <- g + geom_bar(aes(fill = clarity))
-# print(g_bar)
+print(g_bar)
 
-g_bar_dodge <- g + geom_bar(position='dodge', aes(fill =clarity))
+g2 <- ggplot(diamonds, aes(cut))
+g_bar_dodge <- g2 + geom_bar(position='dodge', aes(fill =clarity))
 print(g_bar_dodge)
