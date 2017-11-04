@@ -3,5 +3,7 @@
   roles:
     - selinux
     - git
+    - ruby
   vars:
+    ruby_version: 2.4.0
     selinux_state: disabled
