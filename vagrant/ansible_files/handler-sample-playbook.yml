@@ -1,0 +1,15 @@
+---
+- name: handlerの説明用playbook
+  hosts: test-servers
+  tasks:
+    - name: create a directory if it dose not exist
+      file:
+        path: ~/piyo
+        state: directory
+        mode: 0755
+      notify: sample_handler
+
+  handlers:
+    - name: sample_handler
+      shell: touch ~/piyo/`date +%Y-%m-%d-%H:%M:%S`
+
