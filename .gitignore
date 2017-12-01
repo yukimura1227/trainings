@@ -16,3 +16,6 @@ Session.vim
 *~
 # Auto-generated tag files
 tags
+
+# ansible retry file
+*.retry
