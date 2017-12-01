@@ -1,0 +1,10 @@
+---
+- name: with_itemsを使った繰り返しサンプルだよ
+  hosts: test-servers
+  tasks:
+    - name: with_itemsの繰り返しは{{ item }}を使って取り出すよ
+      command: touch {{ item }}
+      with_items:
+        - abc
+        - def
+        - ghq
