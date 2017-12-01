@@ -22,16 +22,16 @@
     - ruby:install
     - install
 
-- name: rbenv install 
-  command: rbenv install 
+- name: rbenv install
+  shell: rbenv install {{ ruby_version }}
   when: ruby_installed.stdout != ruby_version
   tags:
     - ruby
     - ruby:install
     - install
 
-- name: rbenv global 
-  command: rbenv global  
+- name: rbenv global
+  shell: rbenv global {{ ruby_version }}
   when: ruby_installed.stdout != ruby_version
   tags:
     - ruby
