@@ -11,5 +11,8 @@
     "url": "https://github.com/yukimura1227/electron_training/system_dialogs"
   },
   "author": "yukimura1227",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  }
 }
