@@ -11,5 +11,8 @@
     "url": "https://github.com/yukimura1227/electron_training/jquery_and_bootstwrap"
   },
   "author": "yukimura1227",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
