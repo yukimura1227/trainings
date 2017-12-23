@@ -11,5 +11,8 @@
     "url": "https://github.com/yukimura1227/electron_training/clipboard_image_paste"
   },
   "author": "yukimura1227",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  }
 }
