@@ -1,5 +1,5 @@
 {
-  "name": "jquery_and_bootstwrap",
+  "name": "clipboard_image_paste",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,10 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yukimura1227/electron_training/jquery_and_bootstwrap"
+    "url": "https://github.com/yukimura1227/electron_training/clipboard_image_paste"
   },
   "author": "yukimura1227",
   "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1"
