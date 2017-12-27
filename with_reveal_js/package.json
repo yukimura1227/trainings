@@ -13,6 +13,8 @@
   "author": "yukimura1227",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.7.10"
+    "electron": "^1.7.10",
+    "mathjax": "^2.7.2",
+    "reveal.js": "hakimel/reveal.js#master"
   }
 }
