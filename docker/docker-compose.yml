@@ -9,4 +9,6 @@ mysql:
    - 13306:3306
   environment:
     MYSQL_DATABASE: jupyter
+    MYSQL_USER: jupyter_user
+    MYSQL_PASSWORD: jupyter_pass
     MYSQL_ROOT_PASSWORD: password
