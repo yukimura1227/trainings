@@ -1,4 +1,4 @@
-CREATE TABLE `jupyter`.`animes` (
+CREATE TABLE IF NOT EXISTS `jupyter`.`animes` (
   `anime_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `genre` varchar(255) NOT NULL DEFAULT '',
