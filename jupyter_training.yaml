@@ -1,7 +1,7 @@
 name: jupyter_training
 channels:
-- ioam
 - anaconda
+- ioam
 - defaults
 dependencies:
 - blas=1.0=mkl
@@ -18,6 +18,7 @@ dependencies:
 - mkl_random=1.0.1=py36h78cc56f_0
 - numpy=1.14.5=py36h9bb19eb_0
 - numpy-base=1.14.5=py36ha9ae307_0
+- pandas=0.23.1=py36h1702cab_0
 - appnope=0.1.0=py36_0
 - bkcharts=0.2=py36_0
 - bleach=1.5.0=py36_0
