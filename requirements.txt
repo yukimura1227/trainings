@@ -1,6 +1,7 @@
 # additional install
 PyMySQL==0.7.11
 bokeh==0.13.0
+cyordereddict==1.0.0
 holoviews==1.10.5
 kiwisolver==1.0.1
 matplotlib==2.2.2
