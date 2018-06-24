@@ -1,6 +1,5 @@
 name: jupyter_training
 channels:
-- pyviz
 - ioam
 - defaults
 dependencies:
