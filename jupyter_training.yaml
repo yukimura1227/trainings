@@ -82,7 +82,7 @@ dependencies:
 - zlib=1.2.11=0
 - bokeh=0.12.7=py36_0
 - holoviews=1.8.3=py36_0
-- param=1.6.1=py_0
+- param=1.5.1=py36_0
 - pip:
   - cython==0.28.3
   - ipython-genutils==0.2.0
