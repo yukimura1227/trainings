@@ -28,6 +28,9 @@ conda env export > jupyter_training.yaml
 ## yamlを別の環境で復元する場合
 
 ```
+# まだ環境が作成されていない場合
 conda env create --file jupyter_training.yaml
+# すでに環境が作成されている場合
+conda env update -f=jupyter_training.yaml
 ```
 
