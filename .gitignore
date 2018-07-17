@@ -88,3 +88,5 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
+
+test_result/*
