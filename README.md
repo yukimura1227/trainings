@@ -1,6 +1,14 @@
 # jest_training
 training for jest
 
+# development
+
+## setup
+
+```
+yarn
+```
+
 # test
 
 ```
