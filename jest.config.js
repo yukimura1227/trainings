@@ -2,6 +2,9 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  testEnvironment: './puppeteer_environment.js',
+  globalSetup: './setup.js',
+  globalTeardown: './teardown.js',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -124,7 +127,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  // testEnvironment: "node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
