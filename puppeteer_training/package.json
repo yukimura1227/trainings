@@ -1,0 +1,11 @@
+{
+  "name": "puppeteer_training",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yukimura1227/puppeteer_training.git",
+  "author": "yukimura1227 <takamura1227@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.6.0"
+  }
+}
