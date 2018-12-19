@@ -1,0 +1,23 @@
+{
+  "name": "with_markdown_it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yukimura1227/electron_training/with_markdown_it"
+  },
+  "author": "yukimura1227",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "markdown-it": "^8.4.0"
+  }
+}

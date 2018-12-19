@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class = 'fill-height'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel = "stylesheet" href = "./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <style type="text/css">
+      <!--
+      .fill-height{ height: 100%; }
+      .fill-width{ width: 100%; }
+      -->
+    </style>
+  </head>
+  <body class = 'fill-height'>
+    <div class = 'container fill-height'>
+      <div class = 'row fill-height'>
+        <div class ='col-xs-6 fill-height'>
+          <textarea id='js-markdown-input' class ='fill-height fill-width'></textarea>
+        </div>
+        <div class ='col-xs-6'>
+          <div id='js-markdown-reuslt'></div>
+        </div>
+      </div>
+    </div>
+    <script src = "./view.js" ></script>
+  </body>
+</html>

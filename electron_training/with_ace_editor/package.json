@@ -1,0 +1,21 @@
+{
+  "name": "ace_editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yukimura1227/electron_training/ace_editor"
+  },
+  "author": "yukimura1227",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  },
+  "dependencies": {
+    "ace-min-noconflict": "^1.1.9"
+  }
+}
