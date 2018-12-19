@@ -1,0 +1,9 @@
+---
+- hosts: test-servers
+  roles:
+    - selinux
+    - git
+    - ruby
+  vars:
+    ruby_version: 2.4.1
+    selinux_state: disabled

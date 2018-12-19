@@ -1,0 +1,6 @@
+---
+- name: example
+  hosts: test-servers
+  tasks:
+    - name: create hogehoge file
+      command: "touch hogehoge"

@@ -1,0 +1,26 @@
+---
+- name: 変数を使うサンプルだよ
+  hosts: test-servers
+  vars:
+    var1: 'varsセクションをつかって作られた変数だよ'
+  vars_files:
+    - var.yml
+  tasks:
+    # debugモジュールの引数varに値を渡して画面に出力
+    - debug: var=var1
+    - debug: var=f_var1
+    - debug: var=f_var2
+    - debug: var=f_var3
+
+    - name: registerを使ってtaskの結果を変数に入れるサンプルだよ
+      command: 'cat .ssh/authorized_keys'
+      register: cat_result
+
+    # モジュールの引数は、改行して渡すこともできる
+    - name: cat_resultをそのまま出力してみる
+      debug:
+        var: cat_result
+
+    - name: cat_resultのstdoutだけ出力してみる
+      debug:
+        var: cat_result
