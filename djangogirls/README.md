@@ -10,3 +10,14 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
+
+# Start Local Server
+
+```
+python manage.py runserver
+```
+
+# Create First User
+```
+python manage.py createsuperuser
+```
