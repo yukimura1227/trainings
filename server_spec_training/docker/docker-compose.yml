@@ -1,0 +1,6 @@
+version: '3'
+services:
+  http_server_by_apache:
+    image: centos:centos7
+    container_name: http_server_by_apache
+    restart: always
