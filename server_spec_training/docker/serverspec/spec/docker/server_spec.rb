@@ -17,3 +17,8 @@ describe 'httpd', if: os[:family] == 'redhat' do
     it { should be_running }
   end
 end
+
+# TODO: 以下は、Greenにならないので原因を調べる必要がある。
+describe port(80) do
+  it { should be_listening }
+end
