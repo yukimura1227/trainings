@@ -5,10 +5,35 @@
     <title>Sample Page</title>
   </head>
   <body>
+    <style>
+      .logo {
+        float: left;
+        margin-top: 50px;
+      }
+      .global-nav {
+        float: right;
+        margin-top: 60px;
+      }
+      .global-nav li {
+        float: left;
+        margin: 0 20px;
+        font-size: 20px;
+        list-style: none;
+      }
+    </style>
     <header>
-      <a href="index.html">
-        <img src="images/kangaeruhito.png" alt="kangaeruhito" height='50' width='50'>
-      </a>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/kangaeruhito.png" alt="kangaeruhito" height='50' width='50'>
+        </a>
+      </div>
+      <nav>
+        <ul class="global-nav">
+          <li>Portfolio</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
     </header>
     <div id="wrap">
     </div>
