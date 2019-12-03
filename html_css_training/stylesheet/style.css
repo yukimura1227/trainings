@@ -82,9 +82,21 @@ header {
 footer {
   text-align: center;
   color: #ffffff;
-  padding: 20px 0;j
+  padding: 20px 0;
 }
 
 footer small {
   font-size: 12px;
+}
+
+#index h1 {
+  font-size: 50px;
+  line-height: 1;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#index .content {
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
