@@ -1,0 +1,15 @@
+@charset "utf-8";
+.logo {
+  float: left;
+  margin-top: 50px;
+}
+.global-nav {
+  float: right;
+  margin-top: 60px;
+}
+.global-nav li {
+  float: left;
+  margin: 0 20px;
+  font-size: 20px;
+  list-style: none;
+}
