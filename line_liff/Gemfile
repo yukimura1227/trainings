@@ -5,3 +5,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem 'rails'
+
+# line messaging APIを利用するためのgem
+gem 'line-bot'
+
+  # rubyのサーバー
+gem 'sinatra'
+
+# 環境変数を管理するgem
+gem 'dotenv'
+
+# liff appを管理するgem
+gem 'liff_selector'
