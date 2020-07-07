@@ -13,7 +13,7 @@
   "author": "yukimura1227",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.7.10"
+    "electron": "^7.2.4"
   },
   "dependencies": {
     "ace-min-noconflict": "^1.1.9"
