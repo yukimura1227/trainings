@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "yukimura1227",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/cli": "^4.4.6"
+  }
 }
