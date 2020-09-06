@@ -18,5 +18,10 @@ dependencies:
   - wheel=0.35.1=py_0
   - xz=5.2.5=h1de35cc_0
   - zlib=1.2.11=h1de35cc_3
+  - pip:
+    - beautifulsoup4==4.5.3
+    - cssselect==1.0.3
+    - lxml==4.2.5
+    - requests==2.12.4
 prefix: /Users/m1049/.pyenv/versions/anaconda3-5.3.1/envs/scraiping
 
