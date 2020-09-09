@@ -10,6 +10,7 @@ scrapy list
 scrapy crawl quotes
 # ex) scrapy crawl green
 # ex) scrapy crawl qiita
+# ex) scrapy crawl forkwell
 
 # 結果をjsonファイルに落とす場合
 # ただし、注意が必要で、
