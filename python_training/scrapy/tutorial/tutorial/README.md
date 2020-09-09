@@ -8,6 +8,7 @@ scrapy list
 ```
 # quotesは、scrapy listで確認できるspiderの名前です。他のspiderを作って実行したい場合は、quotes部分を変えてください
 scrapy crawl quotes
+# ex) scrapy crawl green
 
 # 結果をjsonファイルに落とす場合
 # ただし、注意が必要で、
