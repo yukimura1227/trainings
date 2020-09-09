@@ -1,0 +1,51 @@
+name: scrapy_training
+channels:
+  - defaults
+dependencies:
+  - ca-certificates=2020.7.22=0
+  - certifi=2020.6.20=py36_0
+  - libcxx=10.0.0=1
+  - libedit=3.1.20191231=h1de35cc_1
+  - libffi=3.2.1=h0a44026_6
+  - ncurses=6.2=h0a44026_1
+  - openssl=1.1.1g=h1de35cc_0
+  - pip=20.2.2=py36_0
+  - python=3.6.8=haf84260_0
+  - readline=7.0=h1de35cc_5
+  - setuptools=49.6.0=py36_0
+  - sqlite=3.33.0=hffcf06c_0
+  - tk=8.6.10=hb0a8c7a_0
+  - wheel=0.35.1=py_0
+  - xz=5.2.5=h1de35cc_0
+  - zlib=1.2.11=h1de35cc_3
+  - pip:
+    - attrs==20.2.0
+    - automat==20.2.0
+    - cffi==1.14.2
+    - constantly==15.1.0
+    - cryptography==3.1
+    - cssselect==1.1.0
+    - hyperlink==20.0.1
+    - idna==2.10
+    - incremental==17.5.0
+    - itemadapter==0.1.0
+    - itemloaders==1.0.2
+    - jmespath==0.10.0
+    - lxml==4.5.2
+    - parsel==1.6.0
+    - protego==0.1.16
+    - pyasn1==0.4.8
+    - pyasn1-modules==0.2.8
+    - pycparser==2.20
+    - pydispatcher==2.0.5
+    - pyhamcrest==2.0.2
+    - pyopenssl==19.1.0
+    - queuelib==1.5.0
+    - scrapy==2.3.0
+    - service-identity==18.1.0
+    - six==1.15.0
+    - twisted==20.3.0
+    - w3lib==1.22.0
+    - zope-interface==5.1.0
+prefix: /Users/m1049/.pyenv/versions/anaconda3-5.3.1/envs/scrapy_training
+
