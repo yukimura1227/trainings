@@ -2,5 +2,8 @@
   "name": "vuetify_training",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@vue/cli": "^4.5.6"
+  }
 }
