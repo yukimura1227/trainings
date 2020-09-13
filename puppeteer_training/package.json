@@ -6,6 +6,6 @@
   "author": "yukimura1227 <takamura1227@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^1.6.0"
+    "puppeteer": "^1.13.0"
   }
 }
