@@ -11,6 +11,7 @@ scrapy crawl quotes
 # ex) scrapy crawl green
 # ex) scrapy crawl qiita
 # ex) scrapy crawl forkwell
+# ex) scrapy crawl levtech -s ROBOTSTXT_OBEY=False # マナー違反なので、robot.txtを無視させるのはNG!!。xpathや、css指定の練習のために試しにやってみたが、基本NG
 
 # 結果をjsonファイルに落とす場合
 # ただし、注意が必要で、
