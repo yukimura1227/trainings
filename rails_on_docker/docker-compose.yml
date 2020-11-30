@@ -6,7 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
     ports:
-      - "3306:3306"
+      - "3316:3306"
 
   my_application:
     build: .
@@ -14,6 +14,6 @@ services:
     volumes:
       - .:/rails_workspace
     ports:
-      - "3000:3000"
+      - "3010:3000"
     links:
       - database
