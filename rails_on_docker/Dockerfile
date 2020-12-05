@@ -5,8 +5,8 @@ RUN apt-get update -qq && \
                        libpq-dev \
                        nodejs
 
-RUN mkdir /rails_workspace
-ENV RAILS_APPLICATION_ROOT_DIR /rails_workspace
+RUN mkdir /rails_app
+ENV RAILS_APPLICATION_ROOT_DIR /rails_app
 WORKDIR $RAILS_APPLICATION_ROOT_DIR
 
 ADD ./initial_template/Gemfile $RAILS_APPLICATION_ROOT_DIR/Gemfile
