@@ -15,3 +15,5 @@ tags
 
 .DS_Store
 secret
+
+.ipynb_checkpoints
