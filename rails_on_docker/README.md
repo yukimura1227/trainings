@@ -1,4 +1,6 @@
-## Memo
+# Memo
+
+## Setup
 ### 1st
 最初に、Dockerファイル等を作った。
 - sample/Dockerfile
@@ -23,6 +25,12 @@ docker-compose build
 db create
 ```
 docker-compose run web rake db:create
+```
+
+## Execute
+
+```
+docker-compose up
 ```
 
 ## referene
