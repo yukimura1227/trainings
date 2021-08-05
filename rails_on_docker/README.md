@@ -33,5 +33,20 @@ docker-compose run web rake db:create
 docker-compose up
 ```
 
+## How To Debug
+
+binding.pryを用いてDebugする場合は、
+
+
+```
+# containerのidを調べる
+docker ps
+# attachする
+docker attach 80e34a49c0a1
+# このattachしているterminal上で止まります。
+# 抜けるときはCtrl+p -> Ctrl+q で抜けましょう
+# Ctrl+Cで抜けるとコンテナが終了してしまいますので避けましょう
+`````
+
 ## referene
 https://docs.docker.com/samples/rails/
