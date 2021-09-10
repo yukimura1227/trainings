@@ -12,3 +12,10 @@ services:
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
 
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.1
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://elastic_search:9200
+
