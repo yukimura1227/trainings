@@ -1,0 +1,31 @@
+version: '3'
+services:
+  my_database:
+    image: postgres:10.5
+    environment:
+      POSTGRES_USER: rails_app
+      POSTGRES_PASSWORD: password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    ports:
+      - "5432:5432"
+
+  my_application:
+    build: .
+    environment:
+      RAILS_APP_DATABASE_USER: rails_app
+      RAILS_APP_DATABASE_PASSWORD: password
+      RAILS_APP_DATABASE_HOST: my_database
+    command: >
+      /bin/sh -c
+      "bundle install
+      && bin/rails db:create
+      && bin/rails db:migrate
+      && bin/rails -p 3000 server -b 0.0.0.0;"
+
+    volumes:
+      - ./rails_app:/rails_app
+    working_dir: /rails_app
+    ports:
+      - "3010:3000"
+    links:
+      - my_database
