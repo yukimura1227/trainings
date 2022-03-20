@@ -1,39 +1,52 @@
-# What
-Dockerを使ったRailsの開発環境を作ってみる。
+# Memo
 
-# 初期セットアップ
-```
-# 最初や、Dockerfileを更新した場合
-docker compose build
-# docker compose build --no-cache # cacheされていてうまくbuildされない場合は--no-cacheつける
-```
+## Setup
+### 1st
+最初に、Dockerファイル等を作った。
+- sample/Dockerfile
+- sample/Gemfile
+- sample/Gemfile.lock
+- sample/docker-compose.yml
+- sample/entrypoint.sh
 
-
-# 起動
-
+### 2nd
+以下を実行して、railsアプリを生成
 ```
-docker compose up -d
-```
-
-```
-# Railsアプリの作成
-# note: docker compose upで、databaseが動いている必要がある。
-# 動かなかったので保留：docker compose exec my_application rails new . --force --database=postgresql --skip-bundle -m https://raw.githubusercontent.com/yukimura1227/rails_template/master/template/template.rb --webpack
-docker compose exec my_application rails new . --force --database=postgresql --webpack
+docker-compose run --no-deps web rails new . --force --database=postgresql
 ```
 
+#### 適宜
+rails newを含めて、DockerfileやGemfileを更新した場合は、dockerのbuildを行う。
 ```
-# bundle installしたい場合
-docker compose exec my_application bundle install
-```
-
-```
-# databaseのcreate したい場合
-docker compose exec my_application rails db:create
+docker-compose build
 ```
 
+## 3rd
+db create
 ```
-# migrateしたい場合
-docker compose exec my_application rails db:migrate
+docker-compose run web rake db:create
 ```
 
+## Execute
+
+```
+docker-compose up
+```
+
+## How To Debug
+
+binding.pryを用いてDebugする場合は、
+
+
+```
+# containerのidを調べる
+docker ps
+# attachする
+docker attach 80e34a49c0a1
+# このattachしているterminal上で止まります。
+# 抜けるときはCtrl+p -> Ctrl+q で抜けましょう
+# Ctrl+Cで抜けるとコンテナが終了してしまいますので避けましょう
+`````
+
+## referene
+https://docs.docker.com/samples/rails/
