@@ -13,6 +13,6 @@
   "author": "yukimura1227",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.7.10"
+    "electron": "^13.6.6"
   }
 }
