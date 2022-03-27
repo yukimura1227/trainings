@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  go_training:
+    image: golang:1.17.8-alpine3.15
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - "8080:8080"
+    tty: true

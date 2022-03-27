@@ -1,3 +1,12 @@
+# PREPARE
+
+```shell
+docker compose up -d
+docker compose exec go_training /bin/sh
+export GO111MODULE="auto"
+apk add git
+```
+
 # SETUP
 ```
 go get github.com/ant0ine/go-json-rest/rest
