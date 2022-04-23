@@ -4,19 +4,19 @@
 ## Run
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Stop
 
 ```
-docker-compose stop
+docker compose stop
 ```
 
 ## Check Container ID
 
 ```
-docker-compose ps
+docker compose ps
 ```
 
 ## Connect MySQL
