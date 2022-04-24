@@ -14,5 +14,17 @@ services:
       MYSQL_USER: jupyter_user
       MYSQL_PASSWORD: jupyter_pass
       MYSQL_ROOT_PASSWORD: password
+
+  jupyter:
+    image: jupyter/minimal-notebook
+    volumes:
+      - "../:/home/jovyan/work"
+    environment:
+      - TZ=Asia/Tokyo
+      - JUPYTER_ENABLE_LAB=yes
+    ports:
+      - 8888:8888
+    command: start-notebook.sh --NotebookApp.token=''
+
 volumes:
   jupyter-mysql-data:
