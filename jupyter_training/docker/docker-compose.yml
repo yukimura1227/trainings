@@ -16,7 +16,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
 
   jupyter:
-    image: jupyter/minimal-notebook
+    image: jupyter/scipy-notebook
     volumes:
       - "../:/home/jovyan/work"
     environment:
