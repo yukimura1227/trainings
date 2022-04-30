@@ -12,25 +12,25 @@
 ### 2nd
 以下を実行して、railsアプリを生成
 ```
-docker-compose run --no-deps web rails new . --force --database=postgresql
+docker compose run --no-deps web rails new . --force --database=postgresql
 ```
 
 #### 適宜
 rails newを含めて、DockerfileやGemfileを更新した場合は、dockerのbuildを行う。
 ```
-docker-compose build
+docker compose build
 ```
 
 ## 3rd
 db create
 ```
-docker-compose run web rake db:create
+docker compose run web rake db:create
 ```
 
 ## Execute
 
 ```
-docker-compose up
+docker compose up
 ```
 
 ## How To Debug
