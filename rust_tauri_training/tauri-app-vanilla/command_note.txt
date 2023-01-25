@@ -1,0 +1,21 @@
+🍥 rust_tauri_training $ docker compose run --rm rust-tauri npm create tauri-app
+Need to install the following packages:
+  create-tauri-app@2.7.8
+Ok to proceed? (y) y
+
+✔ Project name · tauri-app-vanilla
+✔ Choose your package manager · npm
+✔ Choose your UI template · vanilla-ts
+
+Please follow https://tauri.app/v1/guides/getting-started/prerequisites to install the needed prerequisites, if you haven't already.
+
+Done, Now run:
+  cd tauri-app-vanilla
+  npm install
+  npm run tauri dev
+
+npm notice
+npm notice New major version of npm available! 8.19.3 -> 9.3.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.3.1
+npm notice Run npm install -g npm@9.3.1 to update!
+npm notice
