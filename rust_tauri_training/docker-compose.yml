@@ -7,7 +7,7 @@ services:
       dockerfile: ./Dockerfile
     working_dir: /app
     volumes:
-      - ./tauri-app:/app
+      - ./:/app
     tty: true
     environment:
       CARGO_BUILD_TARGET_DIR: /app/target
