@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  rust-training:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    working_dir: /app
+    volumes:
+      - ./:/app
+    tty: true
+    environment:
+      CARGO_BUILD_TARGET_DIR: /app/target
