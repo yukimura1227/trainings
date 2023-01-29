@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  node-pty-server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/usr/src/app
+      - xterm_js_training-node_modules-volume:/usr/src/app/node_modules
+    tty: true
+    stdin_open: true
+    command: >
+      /bin/sh -c
+      "npm install && node index.js"
+
+volumes:
+  xterm_js_training-node_modules-volume:
+
