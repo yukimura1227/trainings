@@ -1,3 +1,5 @@
+ref: https://tauri.app/v1/guides/getting-started/setup/html-css-js
+
 🍥 rust_tauri_training $ docker compose run --rm rust-tauri npm create tauri-app
 Need to install the following packages:
   create-tauri-app@2.7.8
