@@ -26,31 +26,46 @@ window.addEventListener('load', async () => {
   webcontainerInstance = await WebContainer.boot();
   await webcontainerInstance.mount(files);
 
-  const installResult = await installDependencies();
-  console.log(installResult);
-  console.log(installResult.output);
+  const exitCode = await installDependencies();
+  if (exitCode !== 0) {
+    throw new Error('Installation failed');
+  };
 
-  textareaEl.value = installResult.output;
+  startDevServer();
 });
 
-// sample for command output for exit code
-// async function installDependencies() {
-//   // Install dependencies
-//   const installProcess = await webcontainerInstance.spawn('npm', ['install']);
-//   // Wait for install command to exit
-//   return { exitCode: installProcess.exit, outputStream: installProcess.output };
-// }
-
-// sample for command output for stream instead of exit code
 const installDependencies = async () => {
+  // Install dependencies
   const installProcess = await webcontainerInstance.spawn('npm', ['install']);
-  const output = "";
+  // Wait for install command to exit
   installProcess.output.pipeTo(new WritableStream({
     write(data) {
-      output.concat(data);
       console.log(data);
     }
   }));
+  return installProcess.exit;
+}
 
-  return { exitCode: installProcess.exit, output: output }
+// sample for command output for stream instead of exit code
+// const installDependencies = async () => {
+//   const installProcess = await webcontainerInstance.spawn('npm', ['install']);
+//   const output = "";
+//   installProcess.output.pipeTo(new WritableStream({
+//     write(data) {
+//       output.concat(data);
+//       console.log(data);
+//     }
+//   }));
+// 
+//   return { exitCode: installProcess.exit, output: output }
+// }
+
+const startDevServer = async () => {
+  // Run `npm run start` to start the Express app
+  await webcontainerInstance.spawn('npm', ['run', 'start']);
+
+  // Wait for `server-ready` event
+  webcontainerInstance.on('server-ready', (port, url) => {
+    iframeEl.src = url;
+  });
 }
