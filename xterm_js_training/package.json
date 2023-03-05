@@ -12,7 +12,6 @@
   "dependencies": {
     "node-pty": "^0.10.1",
     "ws": "^8.12.0",
-    "xterm": "^5.1.0",
-    "xterm-addon-attach": "^0.8.0"
+    "xterm": "^5.1.0"
   }
 }
