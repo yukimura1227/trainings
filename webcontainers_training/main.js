@@ -21,6 +21,12 @@ const iframeEl = document.querySelector('iframe');
 /** @type {HTMLTextAreaElement | null} */
 const textareaEl = document.querySelector('textarea');
 
+/** @param {string} content*/
+
+const writeIndexJS = async (content) => {
+  await webcontainerInstance.fs.writeFile('/index.js', content);
+};
+
 window.addEventListener('load', async () => {
  // Call only once
   webcontainerInstance = await WebContainer.boot();
@@ -30,6 +36,11 @@ window.addEventListener('load', async () => {
   if (exitCode !== 0) {
     throw new Error('Installation failed');
   };
+
+  textareaEl.value = files['index.js'].file.contents;
+  textareaEl.addEventListener('input', (e) => {
+    writeIndexJS(e.currentTarget.value);
+  });
 
   startDevServer();
 });

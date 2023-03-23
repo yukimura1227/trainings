@@ -18,7 +18,7 @@ app.listen(port, () => {
 `,
     },
   },
-  'package.json': {
+   'package.json': {
     file: {
       contents: `
 {
