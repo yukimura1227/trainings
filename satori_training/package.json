@@ -1,0 +1,22 @@
+{
+  "name": "satori_training",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "author": "yukimura1227",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "satori": "^0.4.4",
+    "sharp": "^0.32.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.9",
+    "@types/react": "^18.0.29"
+  }
+}
