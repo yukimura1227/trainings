@@ -9,6 +9,7 @@
   "author": "yukimura1227",
   "license": "MIT",
   "dependencies": {
-    "satori": "^0.4.4"
+    "satori": "^0.4.4",
+    "sharp": "^0.32.0"
   }
 }
