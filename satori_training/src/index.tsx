@@ -2,7 +2,7 @@ import satori from 'satori';
 import sharp from 'sharp';
 import fs from 'fs';
 
-const elipsisStringIfSizeOver = (originalString:string, maxFullSize:number) => {
+const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
   let halfSizeStringLength = 0;
   let fullSizeStringLength = 0;
   for (let i = 0; i < originalString.length; i++) {
@@ -21,13 +21,13 @@ const elipsisStringIfSizeOver = (originalString:string, maxFullSize:number) => {
   return originalString;
 }
 
-const generateOgpPng = async (title:string, userName:string) => {
+const generateOgpPng = async (title = '', userName = '') => {
   const svg = await generateOgpSVG(title, userName);
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
   return png;
 }
 
-const generateOgpSVG = async (title:string, userName:string) => {
+const generateOgpSVG = async (title = '', userName = '') => {
   const fontData = fs.readFileSync("./fonts/NotoSerifJP-Regular.otf");
   const svg = await satori(
     <div
@@ -58,7 +58,7 @@ const generateOgpSVG = async (title:string, userName:string) => {
           padding: 16,
         }}>
           <div style={{ fontSize: 64 }}>
-            {elipsisStringIfSizeOver(title, 68)}
+            {elipsisStringIfSizeOver({originalString: title, maxFullSize: 68})}
           </div>
         </div>
         <div style={{
@@ -76,7 +76,7 @@ const generateOgpSVG = async (title:string, userName:string) => {
               height={80}
               style={{ borderRadius: 50, marginRight: 24 }}
             />
-            {elipsisStringIfSizeOver(userName, 10)}
+            {elipsisStringIfSizeOver({originalString: userName, maxFullSize: 10})}
           </div>
           <div style={{ display: 'flex'}}>
             <img
