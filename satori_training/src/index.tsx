@@ -27,6 +27,11 @@ const generateOgpPng = async (title = '', userName = '') => {
   return png;
 }
 
+const OgpSize = { width: 1200, height: 630 } as const;
+const FrameWidth = 24;
+const BottomAreaHeight = 80;
+const TitleAreaPadding = 24;
+
 const generateOgpSVG = async (title = '', userName = '') => {
   const fontData = fs.readFileSync("./fonts/NotoSerifJP-Regular.otf");
   const svg = await satori(
@@ -35,8 +40,8 @@ const generateOgpSVG = async (title = '', userName = '') => {
         background: 'linear-gradient(270deg, #4a40be, #5765db, #5765db, #658af8, #658af8, #658af8)',
         display: 'flex',
         height: '100%',
-        paddingLeft: 24,
-        paddingTop: 24,
+        paddingLeft: FrameWidth,
+        paddingTop: FrameWidth,
         width: '100%',
       }}
     >
@@ -54,7 +59,7 @@ const generateOgpSVG = async (title = '', userName = '') => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          height: 600-24-24-80,
+          height: OgpSize.height - FrameWidth - TitleAreaPadding*2 - BottomAreaHeight,
           padding: 16,
         }}>
           <div style={{ fontSize: 64 }}>
@@ -64,16 +69,18 @@ const generateOgpSVG = async (title = '', userName = '') => {
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
+          height: BottomAreaHeight,
         }}>
           <div style={{
             fontSize: 48,
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
+            height: BottomAreaHeight,
           }}>
             <img
               src="https://avatars.githubusercontent.com/yukimura1227"
               width={80}
-              height={80}
+              height={BottomAreaHeight}
               style={{ borderRadius: 50, marginRight: 24 }}
             />
             {elipsisStringIfSizeOver({originalString: userName, maxFullSize: 10})}
@@ -81,7 +88,7 @@ const generateOgpSVG = async (title = '', userName = '') => {
           <div style={{ display: 'flex'}}>
             <img
               src="https://slidevook-public.s3.ap-northeast-1.amazonaws.com/slidevook-title.png"
-              height={80}
+              height={BottomAreaHeight}
               width={353}
             />
           </div>
@@ -90,8 +97,8 @@ const generateOgpSVG = async (title = '', userName = '') => {
     </div>
     ,
     {
-      width: 1200,
-      height: 630,
+      width: OgpSize.width,
+      height: OgpSize.height,
       fonts: [
         {
           name: "Noto Serif JP",
