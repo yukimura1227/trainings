@@ -21,7 +21,7 @@ const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
   return originalString;
 }
 
-const generateOgpPng = async (title = '', userName = '') => {
+const generateOgpPng = async ({title = '', userName = ''}) => {
   const svg = await generateOgpSVG(title, userName);
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
   return png;
@@ -112,9 +112,12 @@ const generateOgpSVG = async (title = '', userName = '') => {
 }
 
 (async () => {
-  const ogpImage = await generateOgpPng(
-    'No-Title',
-    'あああああいいいいいう'
-  );
+  const args = process.argv.slice(2);
+  const title = args[0];
+  const userName = args[1];
+  const ogpImage = await generateOgpPng({
+    title: title,
+    userName: userName,
+  });
   fs.writeFileSync('./ogp.png', ogpImage);
 })();

@@ -2,6 +2,6 @@
 
 ```bash
 npm run build
-node dist/index.js
+node dist/index.js inputYourTitle inputUserName
 imgcat ogp.png
 ```
