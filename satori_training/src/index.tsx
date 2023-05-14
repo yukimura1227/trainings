@@ -22,7 +22,7 @@ const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
 }
 
 const generateOgpPng = async ({title = '', userName = ''}) => {
-  const svg = await generateOgpSVG(title, userName);
+  const svg = await generateOgpSVG({title: title, userName: userName});
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
   return png;
 }
@@ -32,7 +32,7 @@ const FrameWidth = 24;
 const BottomAreaHeight = 80;
 const TitleAreaPadding = 24;
 
-const generateOgpSVG = async (title = '', userName = '') => {
+const generateOgpSVG = async ({title = '', userName = ''}) => {
   const fontData = fs.readFileSync("./fonts/NotoSerifJP-Regular.otf");
   const svg = await satori(
     <div
