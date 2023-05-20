@@ -21,8 +21,8 @@ const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
   return originalString;
 }
 
-const generateOgpPng = async ({title = '', userName = ''}) => {
-  const svg = await generateOgpSVG({title: title, userName: userName});
+const generateOgpPng = async ({title = '', userName = '', avatarUrl = ''}) => {
+  const svg = await generateOgpSVG({title: title, userName: userName, avatarUrl: avatarUrl});
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
   return png;
 }
@@ -32,7 +32,7 @@ const FrameWidth = 24;
 const BottomAreaHeight = 80;
 const TitleAreaPadding = 24;
 
-const generateOgpSVG = async ({title = '', userName = ''}) => {
+const generateOgpSVG = async ({title = '', userName = '', avatarUrl: avatarUrl}) => {
   const fontData = fs.readFileSync("./fonts/NotoSerifJP-Regular.otf");
   const svg = await satori(
     <div
@@ -78,7 +78,7 @@ const generateOgpSVG = async ({title = '', userName = ''}) => {
             height: BottomAreaHeight,
           }}>
             <img
-              src="https://avatars.githubusercontent.com/yukimura1227"
+              src={avatarUrl}
               width={80}
               height={BottomAreaHeight}
               style={{ borderRadius: 50, marginRight: 24 }}
@@ -112,12 +112,14 @@ const generateOgpSVG = async ({title = '', userName = ''}) => {
 }
 
 (async () => {
-  const args = process.argv.slice(2);
-  const title = args[0];
-  const userName = args[1];
+  const args      = process.argv.slice(2);
+  const title     = args[0];
+  const userName  = args[1];
+  const avatarUrl = args[2];
   const ogpImage = await generateOgpPng({
     title: title,
     userName: userName,
+    avatarUrl: avatarUrl,
   });
   fs.writeFileSync('./ogp.png', ogpImage);
 })();
