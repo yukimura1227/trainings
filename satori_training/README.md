@@ -2,6 +2,6 @@
 
 ```bash
 npm run build
-node dist/index.js inputYourTitle inputUserName inputAvatarUrl
+node dist/generateOgp.js inputYourTitle inputUserName inputAvatarUrl
 imgcat ogp.png
 ```
