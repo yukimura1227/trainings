@@ -1,4 +1,5 @@
 import satori from 'satori';
+import sharp from 'sharp';
 import fs from 'fs';
 
 const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
@@ -18,6 +19,12 @@ const elipsisStringIfSizeOver = ({originalString = '', maxFullSize = 0}) => {
     }
   }
   return originalString;
+}
+
+const generateOgpPng = async ({title = '', userName = '', avatarUrl = ''}) => {
+  const svg = await generateOgpSVG({title: title, userName: userName, avatarUrl: avatarUrl});
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
+  return png;
 }
 
 const OgpSize = { width: 1200, height: 630 } as const;
@@ -109,10 +116,10 @@ const generateOgpSVG = async ({title = '', userName = '', avatarUrl: avatarUrl})
   const title     = args[0];
   const userName  = args[1];
   const avatarUrl = args[2];
-  const ogpImage = await generateOgpSVG({
+  const ogpImage = await generateOgpPng({
     title: title,
     userName: userName,
     avatarUrl: avatarUrl,
   });
-  fs.writeFileSync('./ogp.svg', ogpImage);
+  fs.writeFileSync('./ogp.png', ogpImage);
 })();
