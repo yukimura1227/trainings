@@ -9,5 +9,3 @@ services:
     volumes:
       - ./:/app
     tty: true
-    environment:
-      CARGO_BUILD_TARGET_DIR: /app/target
