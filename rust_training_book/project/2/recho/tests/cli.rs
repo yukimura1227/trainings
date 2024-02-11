@@ -3,6 +3,17 @@ use predicates::prelude::*;
 use std::fs;
 
 type TestResult = Result<(), Box<dyn std::error::Error>>;
+
+fn run(args: &[&str], expected_file: &str) -> TestResult {
+  let expected = fs::read_to_string(expected_file)?;
+  Command::cargo_bin("recho")?
+    .args(args)
+    .assert()
+    .success()
+    .stdout(expected);
+  Ok(())
+}
+
 #[test]
 fn dies_no_args() -> TestResult {
   Command::cargo_bin("recho")?
@@ -20,19 +31,10 @@ fn runs() {
 
 #[test]
 fn hello1() -> TestResult {
-  let expected = fs::read_to_string("tests/expected/hello1.txt")?;
-  let mut cmd = Command::cargo_bin("recho").unwrap();
-  cmd.arg("Hello there").assert().success().stdout(expected);
-  Ok(())
+  run(&["Hello there"], "tests/expected/hello1.txt")
 }
 
 #[test]
 fn hello2() -> TestResult {
-  let expected = fs::read_to_string("tests/expected/hello2.txt")?;
-  let mut cmd = Command::cargo_bin("recho")?;
-  cmd.args(vec!["Hello", "there"])
-    .assert()
-    .success()
-    .stdout(expected);
-  Ok(())
+  run(&["Hello", "there"], "tests/expected/hello2.txt")
 }
