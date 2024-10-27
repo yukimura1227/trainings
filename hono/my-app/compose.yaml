@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  hono-training:
+    image: denoland/deno
+    working_dir: /app
+    volumes:
+      - ./:/app
+    tty: true
+    command: deno task start
+    ports:
+      - "8000:8000"
