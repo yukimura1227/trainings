@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  playwright-mcp-server:
+    image: node:23.11.0
+    container_name: playwright-mcp-server
+    command: npx @playwright/mcp@latest --port 8931
+    ports:
+      - "8931:8931"
+    networks:
+      - my-mcp-network
+
+  minimal-mcp-client:
+    image: node:23.11.0
+    container_name: minimal-mcp-client
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: /bin/bash -c "echo 'MCP Client container is running. Use docker exec to run your commands.'"
+    tty: true # コンテナを起動状態に保つ
+    depends_on:
+      - playwright-mcp-server
+    environment:
+      - MCP_SERVER=playwright-mcp-server:8931
+    networks:
+      - my-mcp-network
+
+networks:
+  my-mcp-network:
+    driver: bridge
